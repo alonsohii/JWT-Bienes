@@ -1,0 +1,224 @@
+<html>
+
+<head>
+    <title>
+        <%= nombre %>
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
+    <script type="text/javascript" src="http://alasql.org/codex/lib/alasql/alasql.min.js"></script>
+    <script type="text/javascript" src=" https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+
+    <script type="text/javascript" src=" ../js/adicional.js"></script>
+
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js'></script>
+
+    <!--[if IE]>
+<script type="text/javascript " src="../js/angular.min.js "></script>
+<![endif]-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="../css/adicional.css">
+    <link rel="stylesheet" href="../css/search.css">
+    <script src="/socket.io/socket.io.js "></script>
+    <script type="text/javascript" src="../js/app.js "></script>
+    <script type="text/javascript" src="../js/angularjs.js "></script>
+
+    <style type="text/css">
+        body {
+            /* background:linear-gradient(#014576,#0B7AA7,#4CB1A3,#B1DB91)no-repeat;
+  background-size:cover;
+  overflow-x: hidden;*/
+        }
+    </style>
+
+    <script>
+        var loge = 0;
+        $(document).ready(function() {
+            var desarrollo = <%- JSON.stringify(desarrollo) %>;
+            $('#detalleproyecto').html(desarrollo);
+
+            $("#Notificacion").hide();
+            $("#Correcto").hide();
+            $("#login").click(function() { //debugger;
+                $.post("http://localhost:8080/api/authenticate", {
+                        name: $('#email').val(),
+                        password: $('#pw').val()
+                    })
+                    .done(function(data) {
+
+                        if (data.success) {
+
+                            localStorage.setItem('tk', data.token);
+                            window.location = "/home";
+
+                        } else {
+                            $("#Notificacion").hide(350);
+                            $("#Notificacion").show(350);
+                            $("#textnot").text("Error:Su correo o usuario no son correctos.");
+                        }
+
+                    })
+                    .fail(function() {
+
+                    })
+
+            });
+
+            $.get("http://localhost:8080/api/?token=" + localStorage.getItem('tk'), function(data, status) {
+
+                if (data.success) {
+                    loge = 1;
+                    $('#botones').hide();
+                    $("#acceso").hide();
+                    $("#registrot").hide();
+                } else {
+                    loge = 0;
+                    $('#botones').show();
+                    $("#registrot").show();
+                }
+
+            });
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <%- include('header'); %>
+        <div class="gradientWhite4">
+            <div class="containderCustom  ">
+                <h1 class="blog-title"> <%= nombre %> </h1>
+                <p class=" lead blog-description">
+                    <%= categoria %> /
+                        <%= subcategoria %>
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-8">
+                    <!--  <div class="gradientWhite3 borderRadius  pa10 textBlack transparente">Detalles de postulacion</div>  -->
+                    <div id="detalleproyecto" class="subscribeStaticBlue pa1">
+                        <%= desarrollo %>
+
+                    </div>
+
+                    <div class=" containerBorderLite pa10">
+
+                        <div class="row">
+                            <div class="gradientBlack borderRadius pa10 textWhite transparente">Postulate para este proyecto</div>
+                            <div class="col-xs-12" id="demoContainer">
+                                <br>
+                                <div class="alert alert-success" id="Correcto">
+                                    <strong>Bien!</strong> Registro Hecho exitosamente.
+                                </div>
+                                <div class="alert alert-danger" id="Notificacion">
+                                    <p id="textnot"></p>
+                                </div>
+                                <div id="registrationForm2" class="form-horizontal fv-form fv-form-bootstrap" novalidate="novalidate" target="none" action="">
+                                    <!--  <button type="submit" class="fv-hidden-submit" style="display: none; width: 0px; height: 0px;"></button> -->
+
+                                    <form class="form-inline">
+                                        <div class="form-group">
+                                            <label class="col-xs-2 control-label ml10">Oferta:</label>
+                                            <div class="col-xs-5">
+                                                <input type="text" class="form-control" name="email" id="email" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-xs-2 control-label ml10"> Correo:</label>
+                                            <div class="col-xs-5">
+                                                <input type="text" class="form-control" name="pw" id="pw" />
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Postularme</button>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="" class="gradientWhite pa5">
+                        <button class="blueButton" id="postulado">Postularme para este proyecto</button>
+                    </div>
+
+                    <div class="">
+                        <h2 class="blog-post-title">Postulados</h2>
+
+                        <div class="s">
+
+                            <div id="mensajes"></div>
+
+                            <table id="search">
+                                <thead>
+                                    <tr>
+                                        <th>Usuario:</th>
+                                        <th>Experiencia</th>
+                                        <th>Fecha</th>
+                                        <th>Precio</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+
+                            <div id="pagingControls"></div>
+                        </div>
+
+                    </div>
+                    <!-- /.blog-post -->
+
+                    <nav class="blog-pagination">
+
+                    </nav>
+
+                </div>
+                <!-- /.blog-main -->
+
+                <div class="col-sm-3 offset-sm-1 blog-sidebar containerBorderLite">
+                    <div class="">
+                        <h4>Proyectos relacionados</h4>
+                        <p>Etiam porta <em>Demo</em> Demo.</p>
+                    </div>
+                    <div class="sidebar-module">
+                        <h4>Demo</h4>
+                        <ol class="list-unstyled">
+                            <li><a href="#">March 2014</a></li>
+
+                        </ol>
+                    </div>
+                    <div class="sidebar-module">
+                        <h4>Recomienda este proyecto a un amigo:</h4>
+                        <ol class="list-unstyled">
+                            <li><a href="#">Proyecto </a></li>
+
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.blog-sidebar -->
+
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.container -->
+
+        <footer class="blog-footer">
+
+        </footer>
+
+</body>
+
+</html>
