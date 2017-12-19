@@ -1,0 +1,224 @@
+Contenido Bien:
+
+* Alojamiento entero
+* Habitacion privada
+* Habitacion compartida
+
+
+Tipo de propiedad:
+
+* Apartamento
+* Casa
+* Bad y Breakbast
+* Loft
+* Cabana
+* Villa
+* Castillo
+* Dormitorio compartido
+* Casa en un arbol
+* Barco
+* Avion
+* Cavana
+* Iglu
+* Faro
+* Tipi
+* Yurrta
+* Tipi
+* Cueva
+* Isla
+* Chalet
+* Casa cueva
+* Choza
+* Tren
+* Tienda de campana
+* Otros
+
+** Personas
+
+- Total de huespedes
+- Domitorios para huespedes
+ * Estudio , 1 ,2,3,4,,5, habitaciones
+ - Camas para huespedes
+
+ Tipo de camas:
+* Cama de matrimonio XXL
+* Cama de m XL
+* Cama de M
+* Cama Individual
+* Sofa cama
+* Sofa
+* Cuna
+
+* Colchon inflable , hinchable
+* Litera
+* Colchon en el suelo
+* Cama para ninos
+* Cama de agua
+* Hamaca
+
+
+ Baños
+ - Numero de banos
+ Tipo de bano ( Privado o compartido)
+
+
+Mas datos
+
+Pais:
+Calle:
+Piso: apt
+Ciudad: s
+Priincia/Estado
+Codigo Postal:
+
+Servicios:
+
+* Elementos basicos: toallas , sabanas , jabon y papel higinenico
+* internet inalambrico
+
+Champu.
+Perchas
+TV
+calefaccion
+aire acondicionado
+desayuno , cafe , te
+escritorio , zona de trabajo
+
+
+
+Seguridad
+
+
+"detector de humo"
+detector de monoxido de carbono
+Botiquin
+ficha de instrucciones de seguridad
+extintor de incendios
+pestillo en la puerta del dormitorio
+
+
+QQue zonas puede usar los huespedes
+
+cocina
+lavadora
+secadora
+aparcamiento gratuito del edi
+ascensor
+psciina
+jacuzzi
+gimnasio
+
+
+mas datos
+
+* Descripcion Alojamiento
+
+* Nomrbre casa
+
+requisitos de los ghuespedes
+
+direccion de correo confirmado
+telefono confirmado 
+foto de perfil
+datos de pago
+aceptar las normas
+motivo de viaje
+
+* identificacion oficial...
+* recomendacion de otros
+
+
+
+- Normaes*******************
+
+apto para nios de 2 a 12
+
+apto para bebes nenires de 2
+se aceptan mascotas  
+apto para fumadores
+se permiten fiestas?
+**** Opcion agregar normas
+
+*** detalles  alaimneto , opcion adicional   mas opcion add information
+
+--- , puede existir ruido ,  subir escaleres.. hay animales en el alojamient, , no se puede aprcar , limitaciones de servicios , hay dispositivos de vigilancia , grabacion , armas en la propiedad , , animales peligrosos 
+
+
+** opcion para revisar solicitudes
+
+, ya se ha alquilado? , nuevo o si
+
+, frecuencia de recibir huespedes
+opciones : siempre , a tiempo parcial , aun nose
+
+
+
+
+
+
+
+
+
+
+----------------------------- disponibilidadd
+
+
+
+cuanto tiemponecesitas para tenr todo preparado antes que lleguen los huepdes
+se puede rsservar 2 dias antes o no
+
+ *** proximas reservas
+ con cuant aantelacion puede reserver los hespedes
+
+
+
+ -******************* HORAS DE LLEGADA
+ DESPUES DE ALAS
+ LLEGADA ANTES DE LAS
+
+
+
+ SALIDA ANTES DE LAS
+
+
+
+ ESTANCIA MINIMA REQUERIDA , NOCHES
+
+
+ ESTANCIA MAXIMA
+
+
+
+ NOCHES INIS GINES DE SEMANA
+
+
+ *************************************************************************************************
+
+
+ INTERFAZ DONDE BLOQUEAS Y DESBLOQUEAS DIAS DDE CALENDARIO PARA RESERVAR
+
+
+
+ *****************************
+
+
+ fijas los precios  precio por noche y seleccionas el tipo de moneda
+
+
+ ************************ 
+
+
+PONER DECUENTOS EN TU CASA , YA SEA 15|% DESCUENTO PRIMER HUESPED  ,  ONO
+
+
+DESCUENTOS?
+
+
+POR SEMANA
+
+
+DESCUENTO POR MES
+
+************ COMPRBACION\
+
+
